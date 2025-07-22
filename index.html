@@ -37,11 +37,8 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Custom Locker Scripts -->
-    <script type="text/javascript">
-        var JrQny_CfZ_FEbmKc = {"it": 4473292, "key": "9ce0e"};
-    </script>
-    <script src="https://d2yc6hxtq0phup.cloudfront.net/4b1d1f3.js"></script>
+    <!-- New Content Locker Script -->
+    <script type="text/javascript" id="ogjs" src="https://installchecker.com/cl/js/42l921"></script>
 
     <style>
         body {
@@ -80,12 +77,27 @@
         .hidden {
             display: none;
         }
+        /* Google Translate Widget Styles */
+        .skiptranslate {
+            display: none !important;
+        }
+        body {
+            top: 0 !important; 
+        }
+        #google_translate_element {
+            background: #1f2937;
+            padding: 8px;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-200">
 
+    <!-- Google Translate Element -->
+    <div id="google_translate_element" class="fixed top-4 right-4 z-[100]"></div>
+
     <!-- Header Section -->
-    <header class="container mx-auto px-4 pt-8 pb-4 text-center">
+    <header class="container mx-auto px-4 pt-8 pb-4 text-center mt-16 md:mt-0">
         <img src="https://www2.0zz0.com/2025/07/20/02/902603217.png" alt="APKLingo Logo" class="mx-auto mb-4 w-24 h-24 rounded-full border-2 border-green-500 shadow-lg"
              onerror="this.onerror=null;this.src='https://placehold.co/120x120/1f2937/10b981?text=Logo';">
         <h1 class="text-4xl md:text-5xl font-bold gradient-text">Apklingo.com</h1>
@@ -120,6 +132,14 @@
             <!-- Modal content will be dynamically inserted here -->
         </div>
     </div>
+
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script>
         // --- DATA (with categories) ---
@@ -169,9 +189,6 @@
 
         // --- FUNCTIONS ---
 
-        /**
-         * Renders game cards based on the provided data array.
-         */
         function renderGames(games) {
             gamesGrid.innerHTML = '';
             noResults.classList.toggle('hidden', games.length > 0);
@@ -198,9 +215,6 @@
             });
         }
         
-        /**
-         * Renders the category filter buttons.
-         */
         function renderCategories() {
             const allCategories = new Set(gamesData.flatMap(game => game.categories));
             const categories = ['All', ...allCategories];
@@ -209,21 +223,16 @@
                 <button class="category-btn px-4 py-2 text-sm rounded-full bg-gray-800 border border-gray-700 text-gray-300 ${category === activeCategory ? 'active' : ''}" data-category="${category}">
                     ${category}
                 </button>
-            `).join('');
+            `).join('').trim();
         }
 
-        /**
-         * Filters games based on active category and search term, then renders them.
-         */
         function filterAndRender() {
             let filteredGames = gamesData;
 
-            // Filter by category
             if (activeCategory !== 'All') {
                 filteredGames = filteredGames.filter(game => game.categories.includes(activeCategory));
             }
 
-            // Filter by search term
             const searchTerm = searchInput.value.toLowerCase();
             if (searchTerm) {
                 filteredGames = filteredGames.filter(game => game.title.toLowerCase().includes(searchTerm));
@@ -232,16 +241,12 @@
             renderGames(filteredGames);
         }
 
-        /**
-         * Handles clicks on category buttons.
-         */
         function handleCategoryClick(event) {
             const button = event.target.closest('.category-btn');
             if (!button) return;
 
             activeCategory = button.dataset.category;
             
-            // Update active class on buttons
             document.querySelectorAll('.category-btn').forEach(btn => {
                 btn.classList.toggle('active', btn.dataset.category === activeCategory);
             });
@@ -249,7 +254,6 @@
             filterAndRender();
         }
 
-        // Other functions (openModal, closeModal) remain the same...
         function openModal(gameId) {
             const game = gamesData.find(g => g.id === gameId);
             if (!game) return;
@@ -273,7 +277,7 @@
                             <i class="fas fa-download text-green-400 mr-1"></i> ${game.downloads}
                         </div>
                     </div>
-                    <button onclick="_Cd()" class="w-full mt-6 bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition-transform transform hover:scale-105">
+                    <button onclick="og_load()" class="w-full mt-6 bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition-transform transform hover:scale-105">
                         Download Now
                     </button>
                 </div>
