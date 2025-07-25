@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark"> <!-- Default to dark mode -->
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,10 +62,10 @@
 
     <style>
         html { scroll-behavior: smooth; }
-        body { font-family: 'Poppins', sans-serif; transition: background-color 0.3s, color 0.3s; }
+        body { font-family: 'Poppins', sans-serif; background-color: #111827; }
         .gradient-text { background: linear-gradient(90deg, #10b981, #6ee7b7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .card-bg { transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s; }
-        .card-bg:hover { transform: translateY(-5px); }
+        .card-bg { background-color: #1f2937; border: 1px solid #374151; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-bg:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(16, 185, 129, 0.15); }
         .modal-backdrop { background-color: rgba(0, 0, 0, 0.8); transition: opacity 0.3s ease-in-out; }
         .modal-content { transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; }
         .category-btn { transition: background-color 0.2s, color 0.2s, transform 0.2s; }
@@ -74,6 +74,7 @@
         .hidden { display: none; }
         .skiptranslate { display: none !important; }
         body { top: 0 !important; }
+        #google_translate_element { background: #1f2937; padding: 8px; border-radius: 8px; }
         
         /* Animation Keyframes */
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -85,35 +86,28 @@
         
         /* Countdown Timer Styles */
         .countdown-container { text-align: center; padding: 1rem 0; }
-        .progress-wrapper { height: 10px; width: 100%; overflow: hidden; }
+        .countdown-text { font-size: 1rem; color: #a0aec0; margin-bottom: 0.75rem; }
+        .progress-wrapper { background-color: #2d3748; border-radius: 9999px; height: 10px; width: 100%; overflow: hidden; }
         .progress-bar { background: linear-gradient(90deg, #10b981, #6ee7b7); height: 100%; animation: progress-animation 3s linear forwards; }
     </style>
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+<body class="bg-gray-900 text-gray-200">
 
-    <!-- Top Bar with Theme Toggle & Translate -->
-    <div class="fixed top-0 left-0 right-0 z-[100] bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-sm">
-        <div class="container mx-auto flex justify-end items-center p-2">
-            <div id="google_translate_element" class="scale-90"></div>
-            <button id="theme-toggle" type="button" class="ml-4 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none rounded-lg text-sm p-2.5">
-                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05A1 1 0 003.636 6.464l.707.707a1 1 0 001.414-1.414l-.707-.707zM3 11a1 1 0 100-2H2a1 1 0 100 2h1zM6.464 16.364l-.707.707a1 1 0 001.414 1.414l.707-.707a1 1 0 00-1.414-1.414z"></path></svg>
-            </button>
-        </div>
-    </div>
+    <!-- Google Translate Element -->
+    <div id="google_translate_element" class="fixed top-4 right-4 z-[100]"></div>
 
     <!-- Header Section -->
-    <header class="container mx-auto px-4 pt-24 pb-4 text-center opacity-0 animate-fadeInUp">
+    <header class="container mx-auto px-4 pt-8 pb-4 text-center mt-16 md:mt-0 opacity-0 animate-fadeInUp">
         <img src="https://www2.0zz0.com/2025/07/20/02/902603217.png" alt="APKLingo Logo" class="mx-auto mb-4 w-24 h-24 rounded-full border-2 border-green-500 shadow-lg"
              onerror="this.onerror=null;this.src='https://placehold.co/120x120/1f2937/10b981?text=Logo';">
         <h1 class="text-4xl md:text-5xl font-bold gradient-text">Apklingo.com</h1>
-        <p class="text-gray-500 dark:text-gray-400 mt-2">Your #1 destination for the latest mobile games.</p>
+        <p class="text-gray-400 mt-2">Your #1 destination for the latest mobile games.</p>
     </header>
 
     <!-- Search Section -->
     <section class="container mx-auto px-4 mb-4 opacity-0 animate-fadeInUp" style="animation-delay: 0.2s;">
         <div class="relative max-w-lg mx-auto">
-            <input type="text" id="searchInput" placeholder="Search for a game..." class="w-full bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-800 dark:text-white rounded-full py-3 px-6 focus:outline-none focus:ring-2 focus:ring-green-500 transition">
+            <input type="text" id="searchInput" placeholder="Search for a game..." class="w-full bg-gray-800 border border-gray-700 text-white rounded-full py-3 px-6 focus:outline-none focus:ring-2 focus:ring-green-500 transition">
             <i class="fa fa-search absolute right-6 top-1/2 -translate-y-1/2 text-gray-500"></i>
         </div>
     </section>
@@ -130,32 +124,32 @@
         <!-- Game cards will be dynamically inserted here -->
     </main>
     
-    <p id="noResults" class="text-center text-gray-500 dark:text-gray-500 mt-8 hidden">No games found matching your criteria.</p>
+    <p id="noResults" class="text-center text-gray-500 mt-8 hidden">No games found matching your criteria.</p>
 
     <!-- Testimonials Section -->
     <section class="container mx-auto px-4 py-12 opacity-0 animate-fadeInUp" style="animation-delay: 0.6s;">
         <h2 class="text-3xl font-bold text-center mb-8 gradient-text">What Our Users Say</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Testimonial 1 -->
-            <div class="card-bg bg-white dark:bg-gray-800 p-6 rounded-lg text-center shadow-md dark:shadow-none">
+            <div class="card-bg p-6 rounded-lg text-center">
                 <div class="text-yellow-400 mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="text-gray-600 dark:text-gray-300 italic">"Best site for mobile games! Fast, secure downloads every time. Highly recommended."</p>
-                <p class="font-bold mt-4 text-green-500 dark:text-green-400">- Alex Morgan</p>
+                <p class="text-gray-300 italic">"Best site for mobile games! Fast, secure downloads every time. Highly recommended."</p>
+                <p class="font-bold mt-4 text-green-400">- Alex Morgan</p>
             </div>
             <!-- Testimonial 2 -->
-            <div class="card-bg bg-white dark:bg-gray-800 p-6 rounded-lg text-center shadow-md dark:shadow-none">
+            <div class="card-bg p-6 rounded-lg text-center">
                 <div class="text-yellow-400 mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-                <p class="text-gray-600 dark:text-gray-300 italic">"Found all the games I was looking for. The categories feature is super helpful."</p>
-                <p class="font-bold mt-4 text-green-500 dark:text-green-400">- Samira Khan</p>
+                <p class="text-gray-300 italic">"Found all the games I was looking for. The categories feature is super helpful."</p>
+                <p class="font-bold mt-4 text-green-400">- Samira Khan</p>
             </div>
             <!-- Testimonial 3 -->
-            <div class="card-bg bg-white dark:bg-gray-800 p-6 rounded-lg text-center shadow-md dark:shadow-none">
+            <div class="card-bg p-6 rounded-lg text-center">
                 <div class="text-yellow-400 mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="text-gray-600 dark:text-gray-300 italic">"The download process is so smooth with the timer. Great user experience!"</p>
-                <p class="font-bold mt-4 text-green-500 dark:text-green-400">- David Chen</p>
+                <p class="text-gray-300 italic">"The download process is so smooth with the timer. Great user experience!"</p>
+                <p class="font-bold mt-4 text-green-400">- David Chen</p>
             </div>
         </div>
-        <div class="flex justify-center items-center space-x-8 mt-8 text-gray-500 dark:text-gray-400">
+        <div class="flex justify-center items-center space-x-8 mt-8 text-gray-400">
             <div class="flex items-center"><i class="fas fa-shield-alt text-green-500 mr-2"></i><span>Secure Downloads</span></div>
             <div class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i><span>Verified Files</span></div>
             <div class="flex items-center"><i class="fas fa-headset text-green-500 mr-2"></i><span>24/7 Support</span></div>
@@ -164,18 +158,18 @@
 
     <!-- Game Details Modal -->
     <div id="gameModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden">
-        <div id="modalContent" class="bg-white dark:bg-gray-800 rounded-lg shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto transform scale-95 opacity-0">
+        <div id="modalContent" class="card-bg rounded-lg shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto transform scale-95 opacity-0">
             <!-- Modal content will be dynamically inserted here -->
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-200 dark:bg-gray-800 text-center text-gray-500 dark:text-gray-400 p-6 mt-12">
+    <footer class="bg-gray-800 text-center text-gray-400 p-6 mt-12">
         <p>&copy; 2025 Apklingo.com. All Rights Reserved.</p>
         <div class="flex justify-center space-x-4 mt-2">
-            <a href="#" class="hover:text-green-500 dark:hover:text-green-400 transition">About Us</a>
-            <a href="#" class="hover:text-green-500 dark:hover:text-green-400 transition">Contact</a>
-            <a href="#" class="hover:text-green-500 dark:hover:text-green-400 transition">Privacy Policy</a>
+            <a href="#" class="hover:text-green-400 transition">About Us</a>
+            <a href="#" class="hover:text-green-400 transition">Contact</a>
+            <a href="#" class="hover:text-green-400 transition">Privacy Policy</a>
         </div>
     </footer>
 
@@ -196,9 +190,6 @@
         ];
 
         // --- ELEMENTS ---
-        const themeToggleButton = document.getElementById('theme-toggle');
-        const darkIcon = document.getElementById('theme-toggle-dark-icon');
-        const lightIcon = document.getElementById('theme-toggle-light-icon');
         const gamesGrid = document.getElementById('gamesGrid');
         const searchInput = document.getElementById('searchInput');
         const noResults = document.getElementById('noResults');
@@ -209,26 +200,6 @@
         // --- STATE ---
         let activeCategory = 'All';
 
-        // --- THEME LOGIC ---
-        function applyTheme(isDark) {
-            if (isDark) {
-                document.documentElement.classList.add('dark');
-                lightIcon.classList.remove('hidden');
-                darkIcon.classList.add('hidden');
-            } else {
-                document.documentElement.classList.remove('dark');
-                darkIcon.classList.remove('hidden');
-                lightIcon.classList.add('hidden');
-            }
-        }
-
-        themeToggleButton.addEventListener('click', () => {
-            // Use .toggle() and save the return value which is true if class was added, false if removed.
-            const isDarkNow = document.documentElement.classList.toggle('dark');
-            localStorage.setItem('theme', isDarkNow ? 'dark' : 'light');
-            applyTheme(isDarkNow);
-        });
-
         // --- RENDER FUNCTIONS ---
         function renderGames(games) {
             gamesGrid.innerHTML = '';
@@ -236,18 +207,18 @@
             
             games.forEach((game, index) => {
                 const card = document.createElement('div');
-                card.className = 'card-bg bg-white dark:bg-gray-800 rounded-lg p-4 flex items-center space-x-4 cursor-pointer opacity-0 shadow-md dark:shadow-none';
+                card.className = 'card-bg rounded-lg p-4 flex items-center space-x-4 cursor-pointer opacity-0';
                 card.style.animation = `zoomIn 0.5s ease-out forwards ${index * 0.1}s`;
                 card.setAttribute('data-game-id', game.id);
                 card.innerHTML = `
                     <img src="${game.imageSrc}" alt="${game.title}" class="w-20 h-20 rounded-md object-cover flex-shrink-0" 
                          onerror="this.onerror=null;this.src='https://placehold.co/80x80/1f2937/ffffff?text=IMG';">
                     <div class="flex-1">
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">${game.title}</h3>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">${game.platforms}</p>
-                        <div class="flex items-center flex-wrap text-sm mt-1 text-gray-600 dark:text-gray-300">
+                        <h3 class="text-xl font-bold text-white">${game.title}</h3>
+                        <p class="text-sm text-gray-400">${game.platforms}</p>
+                        <div class="flex items-center flex-wrap text-sm mt-1 text-gray-300">
                             <span class="flex items-center mr-3"><i class="fas fa-star text-yellow-400 mr-1"></i> ${game.rating}</span>
-                            <span class="flex items-center mr-3"><i class="fas fa-download text-green-500 dark:text-green-400 mr-1"></i> ${game.downloads}</span>
+                            <span class="flex items-center mr-3"><i class="fas fa-download text-green-400 mr-1"></i> ${game.downloads}</span>
                             <span class="flex items-center"><i class="fas fa-fire text-red-500 mr-1"></i> ${game.activePlayers}</span>
                         </div>
                     </div>
@@ -262,7 +233,7 @@
             const categories = ['All', ...allCategories];
             
             categoriesContainer.innerHTML = categories.map(category => `
-                <button class="category-btn px-4 py-2 text-sm rounded-full bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 ${category === activeCategory ? 'active' : ''}" data-category="${category}">
+                <button class="category-btn px-4 py-2 text-sm rounded-full bg-gray-800 border border-gray-700 text-gray-300 ${category === activeCategory ? 'active' : ''}" data-category="${category}">
                     ${category}
                 </button>
             `).join('').trim();
@@ -296,14 +267,14 @@
                 <div class="p-6">
                     <div class="flex justify-between items-start">
                         <h2 class="text-2xl font-bold gradient-text mb-4">${game.title}</h2>
-                        <button id="closeModalBtn" class="text-2xl leading-none text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition">&times;</button>
+                        <button id="closeModalBtn" class="text-2xl leading-none text-gray-400 hover:text-white transition">&times;</button>
                     </div>
                     <img src="${game.imageSrc}" alt="${game.title}" class="w-full h-48 rounded-lg object-cover mb-4"
                          onerror="this.onerror=null;this.src='https://placehold.co/400x192/111827/ffffff?text=Game+Banner';">
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">${game.description}</p>
-                    <div class="flex items-center justify-between text-sm mt-1 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-900 p-3 rounded-lg">
+                    <p class="text-gray-300 mb-4">${game.description}</p>
+                    <div class="flex items-center justify-between text-sm mt-1 text-gray-300 bg-gray-900 p-3 rounded-lg">
                         <div class="flex items-center font-semibold"><i class="fas fa-star text-yellow-400 mr-1"></i> ${game.rating}</div>
-                        <div class="flex items-center font-semibold"><i class="fas fa-download text-green-500 dark:text-green-400 mr-1"></i> ${game.downloads}</div>
+                        <div class="flex items-center font-semibold"><i class="fas fa-download text-green-400 mr-1"></i> ${game.downloads}</div>
                         <div class="flex items-center font-semibold"><i class="fas fa-fire text-red-500 mr-1"></i> ${game.activePlayers} Active</div>
                     </div>
                     <div id="download-section" class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -330,8 +301,8 @@
             let countdown = 3;
             downloadSection.innerHTML = `
                 <div class="countdown-container col-span-full">
-                    <p id="countdown-text" class="countdown-text text-gray-500 dark:text-gray-400">Generating download link... ${countdown}</p>
-                    <div class="progress-wrapper bg-gray-200 dark:bg-gray-700 rounded-full">
+                    <p id="countdown-text" class="countdown-text text-gray-400">Generating download link... ${countdown}</p>
+                    <div class="progress-wrapper bg-gray-700 rounded-full">
                         <div class="progress-bar"></div>
                     </div>
                 </div>
@@ -368,10 +339,6 @@
 
         // --- INITIAL RENDER ---
         document.addEventListener('DOMContentLoaded', () => {
-            const preferredTheme = localStorage.getItem('theme');
-            const isDark = preferredTheme === 'dark' || (preferredTheme === null && window.matchMedia('(prefers-color-scheme: dark)').matches);
-            applyTheme(isDark);
-            
             document.querySelectorAll('.animate-fadeInUp').forEach(el => el.style.opacity = '1');
             renderCategories();
             filterAndRender();
