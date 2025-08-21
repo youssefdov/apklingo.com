@@ -7,7 +7,7 @@
     
     <!-- ================== SEO Meta Tags (Enhanced) ================== -->
     <meta name="description" content="Discover and download top mobile games like GTA 5, Bully, and GTA SA with user ratings and download counts. Apklingo is your #1 destination for mobile gaming!">
-    <meta name="keywords" content="egame fun, apklingo, gta6, games, download games, modded games, GTA 5 mobile, Bully mobile, GTA SA mobile, Android games, iOS games, free games, apk download, action games, open world, roblox, free robux">
+    <meta name="keywords" content="egame fun, apklingo, gta6, games, download games, modded games, GTA 5 mobile, Bully mobile, GTA SA mobile, Android games, iOS games, free games, apk download, action games, open world, roblox, free robux, beamng drive, trending games">
     <meta name="author" content="eGame Fun">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.apklingo.com/">
@@ -72,6 +72,7 @@
             background-color: #1A1A1A; /* Dark card background */
             border: 1px solid #2A2A2A; 
             transition: transform 0.3s ease, border-color 0.3s ease; 
+            position: relative; /* Needed for the badge positioning */
         }
         .card-bg:hover { 
             transform: translateY(-5px); 
@@ -114,6 +115,24 @@
         .countdown-text { font-size: 1rem; color: #A0A0A0; margin-bottom: 0.75rem; }
         .progress-wrapper { background-color: #2A2A2A; border-radius: 9999px; height: 10px; width: 100%; overflow: hidden; }
         .progress-bar { background-color: #00E5FF; height: 100%; animation: progress-animation 3s linear forwards; }
+
+        /* Trending Badge Style */
+        .trending-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #00E5FF;
+            color: #0D0D0D;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.7);
+            z-index: 10;
+        }
     </style>
 </head>
 <body class="text-gray-200">
@@ -209,10 +228,11 @@
     <script>
         // --- DATA (with categories and active players) ---
         const gamesData = [
-            { id: 'gta5', title: 'GTA 5 Mobile', platforms: 'ANDROID & IOS', rating: 4.6, downloads: '10K+', activePlayers: '1.5K', imageSrc: 'https://www2.0zz0.com/2025/04/20/14/782745281.png', description: 'Grand Theft Auto V for mobile brings the sprawling city of Los Santos to your fingertips. Experience the interwoven stories of Michael, Franklin, and Trevor in this critically acclaimed open-world adventure.', categories: ['Action', 'Open World'] },
-            { id: 'bully', title: 'Bully Mobile', platforms: 'ANDROID & IOS', rating: 4.3, downloads: '3K+', activePlayers: '800+', imageSrc: 'https://www2.0zz0.com/2025/04/20/14/155262837.png', description: 'Survive the school year at Bullworth Academy. Navigate the social hierarchy, stand up to bullies, attend classes, and explore the town in this classic Rockstar title, now optimized for mobile devices.', categories: ['Action', 'Adventure', 'Simulation'] },
-            { id: 'gtasa', title: 'GTA SA Mobile', platforms: 'ANDROID & IOS', rating: 4.5, downloads: '8K+', activePlayers: '1.1K', imageSrc: 'https://www2.0zz0.com/2025/04/20/14/995968049.png', description: 'Return to the state of San Andreas in the 90s. Play as Carl "CJ" Johnson as he returns home to a life he thought he left behind. Explore three major cities in this massive open-world classic.', categories: ['Action', 'Open World', 'Adventure'] },
-            { id: 'roblox', title: 'Roblox Free Robux', platforms: 'PC, MOBILE, CONSOLE', rating: 4.8, downloads: '5M+', activePlayers: '200K+', imageSrc: 'https://www2.0zz0.com/2025/08/12/15/781197474.png', description: 'Get exclusive access to free Robux for your Roblox account. Join millions of players and discover an infinite variety of immersive worlds created by a global community!', categories: ['Simulation', 'Adventure'], externalLink: 'https://apklingo.com/Games/rubox' }
+            { id: 'gta5', title: 'GTA 5 Mobile', platforms: 'ANDROID & IOS', rating: 4.6, downloads: '10K+', activePlayers: '1.5K', imageSrc: 'https://www2.0zz0.com/2025/04/20/14/782745281.png', description: 'Grand Theft Auto V for mobile brings the sprawling city of Los Santos to your fingertips. Experience the interwoven stories of Michael, Franklin, and Trevor in this critically acclaimed open-world adventure.', categories: ['Action', 'Open World'], isTrending: true },
+            { id: 'bully', title: 'Bully Mobile', platforms: 'ANDROID & IOS', rating: 4.3, downloads: '3K+', activePlayers: '800+', imageSrc: 'https://www2.0zz0.com/2025/04/20/14/155262837.png', description: 'Survive the school year at Bullworth Academy. Navigate the social hierarchy, stand up to bullies, attend classes, and explore the town in this classic Rockstar title, now optimized for mobile devices.', categories: ['Action', 'Adventure', 'Simulation'], isTrending: false },
+            { id: 'gtasa', title: 'GTA SA Mobile', platforms: 'ANDROID & IOS', rating: 4.5, downloads: '8K+', activePlayers: '1.1K', imageSrc: 'https://www2.0zz0.com/2025/04/20/14/995968049.png', description: 'Return to the state of San Andreas in the 90s. Play as Carl "CJ" Johnson as he returns home to a life he thought he left behind. Explore three major cities in this massive open-world classic.', categories: ['Action', 'Open World', 'Adventure'], isTrending: false },
+            { id: 'roblox', title: 'Roblox Free Robux', platforms: 'PC, MOBILE, CONSOLE', rating: 4.8, downloads: '5M+', activePlayers: '200K+', imageSrc: 'https://www2.0zz0.com/2025/08/12/15/781197474.png', description: 'Get exclusive access to free Robux for your Roblox account. Join millions of players and discover an infinite variety of immersive worlds created by a global community!', categories: ['Simulation', 'Adventure'], externalLink: 'https://apklingo.com/Games/rubox', isTrending: true },
+            { id: 'beamng', title: 'BeamNG.drive Mobile', platforms: 'ANDROID & IOS', rating: 4.7, downloads: '1.2M+', activePlayers: '95K+', imageSrc: 'https://www2.0zz0.com/2025/08/21/19/193671192.png', description: 'BeamNG.drive offers dozens of refined, completely customizable vehicles to experiment with. Whether it\'s a compact car or massive truck, players can tweak away.', categories: ['Simulation', 'Racing'], isTrending: true }
         ];
 
         // --- ELEMENTS ---
@@ -224,7 +244,7 @@
         const categoriesContainer = document.getElementById('categoriesContainer');
 
         // --- STATE ---
-        let activeCategory = 'All';
+        let activeCategory = 'All'; // Default to All
 
         // --- RENDER FUNCTIONS ---
         function renderGames(games) {
@@ -236,7 +256,13 @@
                 card.className = 'card-bg rounded-lg p-4 flex items-center space-x-4 cursor-pointer opacity-0';
                 card.style.animation = `zoomIn 0.5s ease-out forwards ${index * 0.1}s`;
                 card.setAttribute('data-game-id', game.id);
+
+                const trendingBadgeHTML = game.isTrending 
+                    ? `<div class="trending-badge"><i class="fas fa-fire"></i></div>` 
+                    : '';
+
                 card.innerHTML = `
+                    ${trendingBadgeHTML}
                     <img src="${game.imageSrc}" alt="${game.title}" class="w-20 h-20 rounded-md object-cover flex-shrink-0" 
                          onerror="this.onerror=null;this.src='https://placehold.co/80x80/1f2937/ffffff?text=IMG';">
                     <div class="flex-1">
@@ -256,7 +282,7 @@
         
         function renderCategories() {
             const allCategories = new Set(gamesData.flatMap(game => game.categories));
-            const categories = ['All', ...allCategories];
+            const categories = ['All', 'Trending', ...allCategories];
             
             categoriesContainer.innerHTML = categories.map(category => `
                 <button class="category-btn px-4 py-2 text-sm rounded-full ${category === activeCategory ? 'active' : ''}" data-category="${category}">
@@ -266,10 +292,16 @@
         }
 
         function filterAndRender() {
-            let filteredGames = gamesData;
-            if (activeCategory !== 'All') {
-                filteredGames = filteredGames.filter(game => game.categories.includes(activeCategory));
+            let filteredGames = [];
+
+            if (activeCategory === 'Trending') {
+                filteredGames = gamesData.filter(game => game.isTrending);
+            } else if (activeCategory === 'All') {
+                filteredGames = gamesData;
+            } else {
+                filteredGames = gamesData.filter(game => game.categories.includes(activeCategory));
             }
+
             const searchTerm = searchInput.value.toLowerCase();
             if (searchTerm) {
                 filteredGames = filteredGames.filter(game => game.title.toLowerCase().includes(searchTerm));
@@ -387,3 +419,4 @@
     </script>
 </body>
 </html>
+
