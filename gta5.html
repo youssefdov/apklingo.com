@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script>(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('groleegni.net',9768848,document.createElement('script'))</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download GTA 5 Mobile - APKLingo</title>
@@ -22,12 +21,6 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- GTA 5 Specific Locker Script -->
-    <script type="text/javascript">
-        var jqYKs_RaT_FBUmWc={"it":4541291,"key":"759e0"};
-    </script>
-    <script src="https://dfmpe7igjx4jo.cloudfront.net/2ad30b0.js"></script>
-
     <style>
         html { scroll-behavior: smooth; }
         body { 
@@ -39,16 +32,9 @@
         
         /* Animation Keyframes */
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes progress-animation { from { width: 0%; } to { width: 100%; } }
 
         /* Animation Classes */
         .animate-fadeInUp { animation: fadeInUp 0.7s ease-out forwards; }
-        
-        /* Countdown Timer Styles */
-        .countdown-container { text-align: center; padding: 1rem 0; }
-        .countdown-text { font-size: 1rem; color: #a0aec0; margin-bottom: 0.75rem; }
-        .progress-wrapper { background-color: #2d3748; border-radius: 9999px; height: 10px; width: 100%; overflow: hidden; }
-        .progress-bar { background: linear-gradient(90deg, #10b981, #6ee7b7); height: 100%; animation: progress-animation 3s linear forwards; }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-200">
@@ -79,48 +65,22 @@
             </p>
 
             <!-- Download Section -->
-            <div id="download-section" class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <button onclick="startDownloadProcess()" class="w-full flex items-center justify-center bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition-transform transform hover:scale-105">
+            <div id="download-section" class="mt-6 grid grid-cols-1 gap-4">
+                <a href="https://apps.apklingo.com/2025/08/gta-5-Mobile.html" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition-transform transform hover:scale-105">
                     <i class="fab fa-android mr-2"></i> Download for Android
-                </button>
-                <button onclick="startDownloadProcess()" class="w-full flex items-center justify-center bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 rounded-lg transition-transform transform hover:scale-105">
+                </a>
+                <a href="https://apps.apklingo.com/2025/08/gta-5-Mobile.html" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 rounded-lg transition-transform transform hover:scale-105">
                     <i class="fab fa-apple mr-2"></i> Download for iOS
-                </button>
+                </a>
+                <a href="https://apps.apklingo.com/2025/08/gta-5-Mobile.html" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition-transform transform hover:scale-105">
+                    <i class="fas fa-desktop mr-2"></i> Download for PC
+                </a>
             </div>
             
         </div>
     </main>
 
     <script>
-        function startDownloadProcess() {
-            const downloadSection = document.getElementById('download-section');
-            if (!downloadSection) return;
-            let countdown = 3;
-            downloadSection.innerHTML = `
-                <div class="countdown-container col-span-full">
-                    <p id="countdown-text" class="countdown-text text-gray-400">Generating download link... ${countdown}</p>
-                    <div class="progress-wrapper bg-gray-700 rounded-full">
-                        <div class="progress-bar"></div>
-                    </div>
-                </div>
-            `;
-            const countdownText = document.getElementById('countdown-text');
-            const interval = setInterval(() => {
-                countdown--;
-                countdownText.textContent = `Generating download link... ${countdown}`;
-                if (countdown <= 0) {
-                    clearInterval(interval);
-                    countdownText.textContent = "Redirecting...";
-                    // The locker script should define a global _Cd function.
-                    if (typeof _Cd === 'function') {
-                        _Cd();
-                    } else {
-                        console.error("Locker function (_Cd) not found.");
-                    }
-                }
-            }, 1000);
-        }
-
         // --- INITIAL RENDER ---
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.animate-fadeInUp').forEach(el => el.style.opacity = '1');
