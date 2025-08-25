@@ -38,10 +38,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Original Content Locker Script -->
-   <script type="text/javascript">
-    var Uopxi_kjy_PJTKRc={"it":4541460,"key":"e32a7"};
-</script>
-<script src="https://dfmpe7igjx4jo.cloudfront.net/e2f86a3.js"></script>
+    <script type="text/javascript">
+        var JrQny_CfZ_FEbmKc = {"it": 4473292, "key": "9ce0e"};
+    </script>
+    <script src="https://d2yc6hxtq0phup.cloudfront.net/4b1d1f3.js"></script>
 
     <!-- ================== Structured Data (JSON-LD) for Pro SEO ================== -->
     <script type="application/ld+json">
@@ -228,7 +228,7 @@
     <script>
         // --- DATA (with categories and active players) ---
         const gamesData = [
-            { id: 'gta5', title: 'GTA 5 Mobile', platforms: 'ANDROID & IOS', rating: 4.6, downloads: '10K+', activePlayers: '1.5K', imageSrc: 'https://www2.0zz0.com/2025/04/20/14/782745281.png', description: 'Grand Theft Auto V for mobile brings the sprawling city of Los Santos to your fingertips. Experience the interwoven stories of Michael, Franklin, and Trevor in this critically acclaimed open-world adventure.', categories: ['Action', 'Open World'], isTrending: true },
+            { id: 'gta5', title: 'GTA 5 Mobile', platforms: 'ANDROID & IOS', rating: 4.6, downloads: '10K+', activePlayers: '1.5K', imageSrc: 'https://www2.0zz0.com/2025/04/20/14/782745281.png', description: 'Grand Theft Auto V for mobile brings the sprawling city of Los Santos to your fingertips. Experience the interwoven stories of Michael, Franklin, and Trevor in this critically acclaimed open-world adventure.', categories: ['Action', 'Open World'], isTrending: true, externalLink: 'https://apklingo.com/gta5' },
             { id: 'bully', title: 'Bully Mobile', platforms: 'ANDROID & IOS', rating: 4.3, downloads: '3K+', activePlayers: '800+', imageSrc: 'https://www2.0zz0.com/2025/04/20/14/155262837.png', description: 'Survive the school year at Bullworth Academy. Navigate the social hierarchy, stand up to bullies, attend classes, and explore the town in this classic Rockstar title, now optimized for mobile devices.', categories: ['Action', 'Adventure', 'Simulation'], isTrending: false },
             { id: 'gtasa', title: 'GTA SA Mobile', platforms: 'ANDROID & IOS', rating: 4.5, downloads: '8K+', activePlayers: '1.1K', imageSrc: 'https://www2.0zz0.com/2025/04/20/14/995968049.png', description: 'Return to the state of San Andreas in the 90s. Play as Carl "CJ" Johnson as he returns home to a life he thought he left behind. Explore three major cities in this massive open-world classic.', categories: ['Action', 'Open World', 'Adventure'], isTrending: false },
             { id: 'roblox', title: 'Roblox Free Robux', platforms: 'PC & MOBILE & CONSOLE', rating: 4.8, downloads: '5M+', activePlayers: '200K+', imageSrc: 'https://www2.0zz0.com/2025/08/12/15/781197474.png', description: 'Get exclusive access to free Robux for your Roblox account. Join millions of players and discover an infinite variety of immersive worlds created by a global community!', categories: ['Simulation', 'Adventure'], externalLink: 'https://apklingo.com/Games/rubox', isTrending: true },
@@ -275,7 +275,15 @@
                         </div>
                     </div>
                 `;
-                card.addEventListener('click', () => openModal(game.id));
+                
+                if (game.externalLink) {
+                    card.addEventListener('click', () => {
+                        window.open(game.externalLink, '_blank');
+                    });
+                } else {
+                    card.addEventListener('click', () => openModal(game.id));
+                }
+
                 gamesGrid.appendChild(card);
             });
         }
@@ -321,23 +329,14 @@
             const game = gamesData.find(g => g.id === gameId);
             if (!game) return;
 
-            let downloadButtonsHTML = '';
-            if (game.externalLink) {
-                 downloadButtonsHTML = `
-                    <a href="${game.externalLink}" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition-transform transform hover:scale-105 col-span-full">
-                        <i class="fas fa-external-link-alt mr-2"></i> Go to Offer
-                    </a>
-                `;
-            } else {
-                downloadButtonsHTML = `
-                    <button onclick="startDownloadProcess()" class="w-full flex items-center justify-center bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition-transform transform hover:scale-105">
-                        <i class="fab fa-android mr-2"></i> Download for Android
-                    </button>
-                    <button onclick="startDownloadProcess()" class="w-full flex items-center justify-center bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 rounded-lg transition-transform transform hover:scale-105">
-                        <i class="fab fa-apple mr-2"></i> Download for iOS
-                    </button>
-                `;
-            }
+            let downloadButtonsHTML = `
+                <button onclick="startDownloadProcess()" class="w-full flex items-center justify-center bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition-transform transform hover:scale-105">
+                    <i class="fab fa-android mr-2"></i> Download for Android
+                </button>
+                <button onclick="startDownloadProcess()" class="w-full flex items-center justify-center bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 rounded-lg transition-transform transform hover:scale-105">
+                    <i class="fab fa-apple mr-2"></i> Download for iOS
+                </button>
+            `;
 
             modalContent.innerHTML = `
                 <div class="p-6">
